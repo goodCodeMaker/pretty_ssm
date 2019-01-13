@@ -5,6 +5,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.dyuproject.protostuff.LinkedBuffer;
 import com.dyuproject.protostuff.ProtostuffIOUtil;
 import com.dyuproject.protostuff.Schema;
@@ -14,6 +17,7 @@ import com.dyuproject.protostuff.runtime.RuntimeSchema;
  * 序列话工具
  */
 public final class ProtoStuffSerializerUtil {
+	private static Logger logger = LoggerFactory.getLogger(ProtoStuffSerializerUtil.class);
 
 	/**
 	 * 序列化对象

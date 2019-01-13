@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LogAop {
 
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Pointcut("execution(* com.pretty.ssm.web.*.*(..))")
 	public void aopMethod() {
@@ -26,8 +26,8 @@ public class LogAop {
 
 	@Around("aopMethod()")
 	public Object record(ProceedingJoinPoint joinPoint) throws Throwable {
-		if (LOGGER.isInfoEnabled()) {
-			LOGGER.info("before " + joinPoint);
+		if (logger.isInfoEnabled()) {
+			logger.info("before " + joinPoint);
 		}
 		return joinPoint.proceed();
 	}

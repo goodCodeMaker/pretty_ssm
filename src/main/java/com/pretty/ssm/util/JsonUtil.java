@@ -3,7 +3,6 @@ package com.pretty.ssm.util;
 import java.util.List;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 
 /**
  * JSON工具类
@@ -12,6 +11,10 @@ import com.alibaba.fastjson.JSONObject;
  * @since 1.0.0
  */
 public final class JsonUtil {
+	
+	private JsonUtil() {
+
+	}
 
 	/**
 	 * 序列化对象
@@ -24,16 +27,14 @@ public final class JsonUtil {
 	 * 序列化List数组
 	 */
 	public static String toJsonArray(List<?> list) {
-		String jsonText = JSON.toJSONString(list, true);
-		return jsonText;
+		return JSON.toJSONString(list, true);
 	}
 
 	/**
 	 * 反序列化为json对象
 	 */
 	public static Object parseJsonObject(String text) {
-		JSONObject json = JSON.parseObject(text);
-		return json;
+		return JSON.parseObject(text);
 	}
 
 	/**
@@ -48,8 +49,7 @@ public final class JsonUtil {
 	 * 将javaBean转化为json对象
 	 */
 	public static Object bean2Json(Object obj) {
-		JSONObject jsonObj = (JSONObject) JSON.toJSON(obj);
-		return jsonObj;
+		return JSON.toJSON(obj);
 	}
 
 }
